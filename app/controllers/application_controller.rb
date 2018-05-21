@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
   protect_from_forgery with: :exception
   
   # デフォルトでは用意されていないカラムをdeviseに追加して使う場合に必要（今回の場合はname）
